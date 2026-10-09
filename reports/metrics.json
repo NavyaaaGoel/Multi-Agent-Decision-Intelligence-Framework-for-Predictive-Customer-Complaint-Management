@@ -1,0 +1,179 @@
+{
+  "splits": {
+    "train": 6300,
+    "val": 1350,
+    "test": 1350,
+    "breach_rate_test": 0.1874,
+    "escalation_rate_test": 0.1533
+  },
+  "breach": {
+    "ensemble_used_in_pipeline": {
+      "roc_auc": 0.9123,
+      "pr_auc": 0.7175,
+      "brier": 0.0895,
+      "precision": 0.5687,
+      "recall": 0.8182,
+      "f1": 0.671
+    },
+    "gradient_boosting": {
+      "roc_auc": 0.9003,
+      "pr_auc": 0.6731,
+      "brier": 0.0955,
+      "precision": 0.7214,
+      "recall": 0.3992,
+      "f1": 0.514
+    },
+    "logistic_regression": {
+      "roc_auc": 0.9156,
+      "pr_auc": 0.7308,
+      "brier": 0.0873,
+      "precision": 0.7022,
+      "recall": 0.4941,
+      "f1": 0.58
+    },
+    "distributional_lognormal": {
+      "roc_auc": 0.9036,
+      "pr_auc": 0.6946,
+      "brier": 0.0928,
+      "precision": 0.6667,
+      "recall": 0.4822,
+      "f1": 0.5596
+    },
+    "static_rule_baseline": {
+      "roc_auc": 0.8387,
+      "precision": 0.4088,
+      "recall": 0.5138,
+      "f1": 0.4553
+    },
+    "threshold_from_validation": 0.2668,
+    "recall_in_top20pct_flagged": 0.664,
+    "lift_top20pct": 3.3202,
+    "calibration_deciles": [
+      {
+        "mean_pred": 0.0,
+        "observed": 0.0
+      },
+      {
+        "mean_pred": 0.0,
+        "observed": 0.0
+      },
+      {
+        "mean_pred": 0.0013,
+        "observed": 0.0
+      },
+      {
+        "mean_pred": 0.0228,
+        "observed": 0.0148
+      },
+      {
+        "mean_pred": 0.0608,
+        "observed": 0.037
+      },
+      {
+        "mean_pred": 0.1136,
+        "observed": 0.0963
+      },
+      {
+        "mean_pred": 0.1905,
+        "observed": 0.1259
+      },
+      {
+        "mean_pred": 0.291,
+        "observed": 0.3556
+      },
+      {
+        "mean_pred": 0.4439,
+        "observed": 0.5111
+      },
+      {
+        "mean_pred": 0.7326,
+        "observed": 0.7333
+      }
+    ]
+  },
+  "resolution_time": {
+    "gradient_boosting": {
+      "mae_hours": 39.26,
+      "median_abs_err_hours": 16.5,
+      "r2_log_scale": 0.9137
+    },
+    "route_x_severity_median_baseline": {
+      "mae_hours": 46.17,
+      "r2_log_scale": 0.8832
+    },
+    "p90_coverage": 0.8985,
+    "residual_sigma_log": 0.4778
+  },
+  "escalation": {
+    "gradient_boosting": {
+      "roc_auc": 0.6853,
+      "pr_auc": 0.3352,
+      "brier": 0.1201,
+      "precision": 0.4928,
+      "recall": 0.1643,
+      "f1": 0.2464
+    },
+    "logistic_regression": {
+      "roc_auc": 0.7122,
+      "pr_auc": 0.3662,
+      "brier": 0.1161,
+      "precision": 0.42,
+      "recall": 0.3043,
+      "f1": 0.3529
+    }
+  },
+  "intake": {
+    "tfidf_logreg": {
+      "product_acc": 0.9763,
+      "issue_acc": 0.9578
+    },
+    "keyword_baseline_hackathon": {
+      "product_acc": 0.46,
+      "issue_acc": 0.44
+    },
+    "accuracy_when_confidence_ge_0.4": 0.9838,
+    "share_routed_to_human_review": 0.037
+  },
+  "breach_feature_importance_auc_drop": [
+    {
+      "feature": "sla_hours",
+      "auc_drop": 0.0894
+    },
+    {
+      "feature": "issue_key",
+      "auc_drop": 0.0597
+    },
+    {
+      "feature": "route",
+      "auc_drop": 0.0404
+    },
+    {
+      "feature": "team_load",
+      "auc_drop": 0.0335
+    },
+    {
+      "feature": "fast_tracked",
+      "auc_drop": 0.0242
+    },
+    {
+      "feature": "team",
+      "auc_drop": 0.0057
+    },
+    {
+      "feature": "repeat_count",
+      "auc_drop": 0.0053
+    },
+    {
+      "feature": "log_amount",
+      "auc_drop": 0.0049
+    },
+    {
+      "feature": "severity_score",
+      "auc_drop": 0.004
+    },
+    {
+      "feature": "tier",
+      "auc_drop": 0.0026
+    }
+  ]
+}

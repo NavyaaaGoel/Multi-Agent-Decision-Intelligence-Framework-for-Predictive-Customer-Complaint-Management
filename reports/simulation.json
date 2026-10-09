@@ -1,0 +1,85 @@
+{
+  "policies": {
+    "no_intervention": {
+      "breaches": 298,
+      "breach_rate": 0.2207,
+      "breach_rate_critical_high": 0.4827,
+      "mean_resolution_hours": 111.26,
+      "p90_resolution_hours": 262.93,
+      "fast_tracks": 0,
+      "reroutes": 0,
+      "intervention_cost": 0.0,
+      "breach_penalty": 1618.2,
+      "net_loss": 1618.2
+    },
+    "static_rule_fast_track_high_critical": {
+      "breaches": 215,
+      "breach_rate": 0.1593,
+      "breach_rate_critical_high": 0.2428,
+      "mean_resolution_hours": 104.45,
+      "p90_resolution_hours": 259.12,
+      "fast_tracks": 318,
+      "reroutes": 0,
+      "intervention_cost": 192.5,
+      "breach_penalty": 994.4,
+      "net_loss": 1186.9
+    },
+    "predictive_multi_agent": {
+      "breaches": 169,
+      "breach_rate": 0.1252,
+      "breach_rate_critical_high": 0.2486,
+      "mean_resolution_hours": 97.36,
+      "p90_resolution_hours": 241.19,
+      "fast_tracks": 431,
+      "reroutes": 75,
+      "intervention_cost": 276.2,
+      "breach_penalty": 837.4,
+      "net_loss": 1113.6
+    }
+  },
+  "comparisons": {
+    "predictive_vs_no_intervention": {
+      "net_loss_reduction": 0.3118,
+      "ci95": [
+        0.2422,
+        0.3735
+      ],
+      "breaches_avoided": 129,
+      "breaches_avoided_ci95": [
+        109.0,
+        150.0
+      ]
+    },
+    "predictive_vs_static_rule": {
+      "net_loss_reduction": 0.0618,
+      "ci95": [
+        0.0171,
+        0.1088
+      ],
+      "breaches_avoided": 46,
+      "breaches_avoided_ci95": [
+        32.975,
+        61.0
+      ]
+    }
+  },
+  "pipeline": {
+    "n_complaints": 1350,
+    "verification_pass_rate": 1.0,
+    "human_review_share": 0.037,
+    "mean_pipeline_ms": 675.5,
+    "intake_issue_accuracy_in_pipeline": 0.9578,
+    "interventions_chosen": {
+      "standard": 895,
+      "fast_track": 378,
+      "fast_track+reroute": 67,
+      "reroute": 10
+    },
+    "escalation_levels": {
+      "None": 986,
+      "Branch": 274,
+      "Regional Office": 77,
+      "MD/CEO Desk": 13
+    }
+  }
+}

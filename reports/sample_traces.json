@@ -1,0 +1,1574 @@
+[
+  {
+    "complaint_id": "C008007",
+    "customer_id": "CU01438",
+    "text": "Issue with card statement. This happened on 12 May. Amount: \u20b9570. I have already contacted customer care 3 times. Reference 296495. Unauthorized transaction. Worst experience with any bank. I will take this to consumer court. I am extremely frustrated with this service. This is pathetic. This is completely unacceptable.",
+    "channel": "Email",
+    "tier": "Priority",
+    "submitted_at": "2026-05-14T13:35:00",
+    "product": "Credit Card",
+    "issue": "Unauthorized Transaction",
+    "intake_confidence": 0.4569,
+    "top_issues": [
+      [
+        "Unauthorized Transaction",
+        0.545
+      ],
+      [
+        "Replacement Card Not Received",
+        0.129
+      ],
+      [
+        "Card Stolen",
+        0.046
+      ]
+    ],
+    "route": "bank_escalation",
+    "base_actions": [
+      "block_credit_card",
+      "create_fraud_case",
+      "assign_fraud_team"
+    ],
+    "partner": "",
+    "severity_score": 10.0,
+    "severity_label": "Critical",
+    "sentiment": -0.8,
+    "threat_count": 1,
+    "amount": 570.0,
+    "repeat_count": 1,
+    "needs_human_review": false,
+    "team": "Fraud & Risk",
+    "backup_team": "Compliance",
+    "team_load": 0.5465,
+    "baseline_risk": {
+      "p_gb": 0.6999,
+      "p_lr": 0.8259,
+      "p_dist": 0.7869,
+      "breach_prob": 0.7709,
+      "escalation_prob": 0.3492,
+      "median_hours": 35.1017,
+      "p90_hours": 64.7528,
+      "log_mu": 3.5582,
+      "source": "ml_models"
+    },
+    "sla_hours": 24,
+    "deadline": "2026-05-15T13:35:00",
+    "sla_status": "At Risk",
+    "risk_bucket": "Severe",
+    "checkpoints": [
+      "2026-05-15T01:35:00",
+      "2026-05-15T08:47:00"
+    ],
+    "expected_completion": "2026-05-15T09:03:08.040000",
+    "candidates": [
+      {
+        "name": "standard",
+        "fast": 0,
+        "reroute": 0,
+        "team": "Fraud & Risk",
+        "load": 0.5465,
+        "cost": 0.0,
+        "breach_prob": 0.7709,
+        "esc_prob": 0.3492,
+        "median_hours": 35.1017,
+        "p90_hours": 64.7528,
+        "log_mu": 3.5582,
+        "loss": 12.3342
+      },
+      {
+        "name": "fast_track",
+        "fast": 1,
+        "reroute": 0,
+        "team": "Fraud & Risk",
+        "load": 0.5465,
+        "cost": 0.4372,
+        "breach_prob": 0.3995,
+        "esc_prob": 0.3492,
+        "median_hours": 19.4689,
+        "p90_hours": 35.9146,
+        "log_mu": 2.9688,
+        "loss": 6.8296
+      },
+      {
+        "name": "reroute",
+        "fast": 0,
+        "reroute": 1,
+        "team": "Compliance",
+        "load": 1.0026,
+        "cost": 0.5,
+        "breach_prob": 0.8496,
+        "esc_prob": 0.325,
+        "median_hours": 41.2528,
+        "p90_hours": 76.0998,
+        "log_mu": 3.7197,
+        "loss": 14.0932
+      },
+      {
+        "name": "fast_track+reroute",
+        "fast": 1,
+        "reroute": 1,
+        "team": "Compliance",
+        "load": 1.0026,
+        "cost": 1.3021,
+        "breach_prob": 0.569,
+        "esc_prob": 0.4088,
+        "median_hours": 24.7959,
+        "p90_hours": 45.7415,
+        "log_mu": 3.2107,
+        "loss": 10.4063
+      }
+    ],
+    "intervention": {
+      "name": "fast_track",
+      "fast_track": true,
+      "reroute_to": null,
+      "cost": 0.437,
+      "breach_prob_before": 0.7709,
+      "breach_prob_after": 0.3995,
+      "loss_before": 12.334,
+      "loss_after": 6.83,
+      "rationale": "fast_track: P(breach) 77% -> 40%, expected loss 12.33 -> 6.83 (cost 0.44, penalty 16.0)"
+    },
+    "final_risk": {
+      "breach_prob": 0.3995,
+      "median_hours": 19.4689,
+      "p90_hours": 35.9146,
+      "log_mu": 2.9688,
+      "escalation_prob": 0.3492
+    },
+    "priority_score": 61.3,
+    "escalation_level": "MD/CEO Desk",
+    "extra_actions": [
+      "set_priority_queue_fast_track"
+    ],
+    "assigned_team": "Fraud & Risk",
+    "executed_actions": [
+      {
+        "action": "block_credit_card",
+        "status": "simulated_success",
+        "description": "Executed 'block_credit_card' (simulated back-office call)"
+      },
+      {
+        "action": "create_fraud_case",
+        "status": "simulated_success",
+        "description": "Executed 'create_fraud_case' (simulated back-office call)"
+      },
+      {
+        "action": "assign_fraud_team",
+        "status": "simulated_success",
+        "description": "Executed 'assign_fraud_team' (simulated back-office call)"
+      },
+      {
+        "action": "set_priority_queue_fast_track",
+        "status": "simulated_success",
+        "description": "Moved case to the fast-track queue"
+      }
+    ],
+    "status": "Escalated to Bank",
+    "verification": {
+      "passed": true,
+      "failed": [],
+      "checks": [
+        {
+          "check": "route_valid",
+          "ok": true,
+          "detail": "bank_escalation"
+        },
+        {
+          "check": "probabilities_in_range",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "deadline_consistent",
+          "ok": true,
+          "detail": "2026-05-15 13:35:00"
+        },
+        {
+          "check": "team_assigned",
+          "ok": true,
+          "detail": "Fraud & Risk"
+        },
+        {
+          "check": "intervention_not_harmful",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "escalation_level_valid",
+          "ok": true,
+          "detail": "MD/CEO Desk"
+        },
+        {
+          "check": "critical_risk_escalated",
+          "ok": true,
+          "detail": "Critical + high breach risk needs Regional/MD escalation"
+        },
+        {
+          "check": "status_matches_route",
+          "ok": true,
+          "detail": "Escalated to Bank"
+        },
+        {
+          "check": "all_actions_executed",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "no_auto_action_on_low_confidence",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_trail_persisted",
+          "ok": true,
+          "detail": ""
+        }
+      ]
+    },
+    "replans": 0,
+    "degraded": false,
+    "errors": [],
+    "trace": [
+      {
+        "agent": "intake",
+        "ms": 6.08,
+        "output": {
+          "product": "Credit Card",
+          "issue": "Unauthorized Transaction",
+          "confidence": 0.4569,
+          "route": "bank_escalation",
+          "severity": "Critical (10.0)",
+          "sentiment": -0.8,
+          "amount": 570.0,
+          "repeat_count": 1,
+          "needs_human_review": false
+        }
+      },
+      {
+        "agent": "risk_predictor",
+        "ms": 254.86,
+        "output": {
+          "team_load": 0.5465,
+          "breach_prob": 0.7709,
+          "escalation_prob": 0.3492,
+          "median_hours": 35.1017,
+          "p90_hours": 64.7528,
+          "source": "ml_models"
+        }
+      },
+      {
+        "agent": "sla_planner",
+        "ms": 0.08,
+        "output": {
+          "deadline": "2026-05-15T13:35:00",
+          "sla_hours": 24,
+          "risk_bucket": "Severe",
+          "sla_status": "At Risk",
+          "slack_hours_vs_p90": -40.8
+        }
+      },
+      {
+        "agent": "decision",
+        "ms": 368.01,
+        "output": {
+          "chosen": "fast_track",
+          "rationale": "fast_track: P(breach) 77% -> 40%, expected loss 12.33 -> 6.83 (cost 0.44, penalty 16.0)",
+          "priority_score": 61.3,
+          "escalation_level": "MD/CEO Desk",
+          "extra_actions": [
+            "set_priority_queue_fast_track"
+          ],
+          "candidates": [
+            {
+              "name": "standard",
+              "breach_prob": 0.7709,
+              "cost": 0.0,
+              "loss": 12.3342
+            },
+            {
+              "name": "fast_track",
+              "breach_prob": 0.3995,
+              "cost": 0.4372,
+              "loss": 6.8296
+            },
+            {
+              "name": "reroute",
+              "breach_prob": 0.8496,
+              "cost": 0.5,
+              "loss": 14.0932
+            },
+            {
+              "name": "fast_track+reroute",
+              "breach_prob": 0.569,
+              "cost": 1.3021,
+              "loss": 10.4063
+            }
+          ]
+        }
+      },
+      {
+        "agent": "resource_router",
+        "ms": 0.22,
+        "output": {
+          "assigned_team": "Fraud & Risk",
+          "partner": null,
+          "expected_completion": "2026-05-15T09:03:08.040000",
+          "load_at_assignment": 0.546
+        }
+      },
+      {
+        "agent": "action",
+        "ms": 0.41,
+        "output": {
+          "executed": 4,
+          "status": "Escalated to Bank"
+        }
+      },
+      {
+        "agent": "verification",
+        "ms": 0.08,
+        "output": {
+          "passed": true,
+          "failed": [],
+          "n_checks": 11
+        }
+      }
+    ],
+    "monitor_events": [],
+    "live_breach_prob": null
+  },
+  {
+    "complaint_id": "C008040",
+    "customer_id": "CU00399",
+    "text": "Writing to complain about home loan: Recovery agent harassment. This happened on 13 May. I have already contacted customer care 2 times. Reference 524338.",
+    "channel": "Chatbot",
+    "tier": "Standard",
+    "submitted_at": "2026-05-15T04:08:00",
+    "product": "Loans",
+    "issue": "Recovery Agent Harassment",
+    "intake_confidence": 0.9744,
+    "top_issues": [
+      [
+        "Recovery Agent Harassment",
+        0.99
+      ],
+      [
+        "Loan Application Rejected",
+        0.003
+      ],
+      [
+        "Loan Disbursement Failed",
+        0.003
+      ]
+    ],
+    "route": "bank_escalation",
+    "base_actions": [
+      "create_loan_case",
+      "assign_loan_team"
+    ],
+    "partner": "",
+    "severity_score": 10.0,
+    "severity_label": "Critical",
+    "sentiment": 0.0,
+    "threat_count": 0,
+    "amount": 0.0,
+    "repeat_count": 2,
+    "needs_human_review": false,
+    "team": "Lending Ops",
+    "backup_team": "Deposits & Accounts",
+    "team_load": 0.711,
+    "baseline_risk": {
+      "p_gb": 0.6686,
+      "p_lr": 0.7918,
+      "p_dist": 0.9699,
+      "breach_prob": 0.8101,
+      "escalation_prob": 0.1736,
+      "median_hours": 58.8995,
+      "p90_hours": 108.653,
+      "log_mu": 4.0758,
+      "source": "ml_models"
+    },
+    "sla_hours": 24,
+    "deadline": "2026-05-16T04:08:00",
+    "sla_status": "At Risk",
+    "risk_bucket": "Severe",
+    "checkpoints": [
+      "2026-05-15T16:08:00",
+      "2026-05-15T23:20:00"
+    ],
+    "expected_completion": "2026-05-16T07:30:15.600000",
+    "candidates": [
+      {
+        "name": "standard",
+        "fast": 0,
+        "reroute": 0,
+        "team": "Lending Ops",
+        "load": 0.711,
+        "cost": 0.0,
+        "breach_prob": 0.8101,
+        "esc_prob": 0.1736,
+        "median_hours": 58.8995,
+        "p90_hours": 108.653,
+        "log_mu": 4.0758,
+        "loss": 8.101
+      },
+      {
+        "name": "fast_track",
+        "fast": 1,
+        "reroute": 0,
+        "team": "Lending Ops",
+        "load": 0.711,
+        "cost": 0.5688,
+        "breach_prob": 0.4252,
+        "esc_prob": 0.1736,
+        "median_hours": 29.4647,
+        "p90_hours": 54.3541,
+        "log_mu": 3.3832,
+        "loss": 4.8211
+      },
+      {
+        "name": "reroute",
+        "fast": 0,
+        "reroute": 1,
+        "team": "Deposits & Accounts",
+        "load": 0.5349,
+        "cost": 0.5,
+        "breach_prob": 0.6377,
+        "esc_prob": 0.1437,
+        "median_hours": 47.983,
+        "p90_hours": 88.5152,
+        "log_mu": 3.8708,
+        "loss": 6.8772
+      },
+      {
+        "name": "fast_track+reroute",
+        "fast": 1,
+        "reroute": 1,
+        "team": "Deposits & Accounts",
+        "load": 0.5349,
+        "cost": 0.9279,
+        "breach_prob": 0.3322,
+        "esc_prob": 0.1437,
+        "median_hours": 27.371,
+        "p90_hours": 50.4919,
+        "log_mu": 3.3095,
+        "loss": 4.2499
+      }
+    ],
+    "intervention": {
+      "name": "fast_track+reroute",
+      "fast_track": true,
+      "reroute_to": "Deposits & Accounts",
+      "cost": 0.928,
+      "breach_prob_before": 0.8101,
+      "breach_prob_after": 0.3322,
+      "loss_before": 8.101,
+      "loss_after": 4.25,
+      "rationale": "fast_track+reroute: P(breach) 81% -> 33%, expected loss 8.10 -> 4.25 (cost 0.93, penalty 10.0)"
+    },
+    "final_risk": {
+      "breach_prob": 0.3322,
+      "median_hours": 27.371,
+      "p90_hours": 50.4919,
+      "log_mu": 3.3095,
+      "escalation_prob": 0.1437
+    },
+    "priority_score": 42.1,
+    "escalation_level": "Branch",
+    "extra_actions": [
+      "set_priority_queue_fast_track",
+      "reassign_to_team:Deposits & Accounts"
+    ],
+    "assigned_team": "Deposits & Accounts",
+    "executed_actions": [
+      {
+        "action": "create_loan_case",
+        "status": "simulated_success",
+        "description": "Executed 'create_loan_case' (simulated back-office call)"
+      },
+      {
+        "action": "assign_loan_team",
+        "status": "simulated_success",
+        "description": "Executed 'assign_loan_team' (simulated back-office call)"
+      },
+      {
+        "action": "set_priority_queue_fast_track",
+        "status": "simulated_success",
+        "description": "Moved case to the fast-track queue"
+      },
+      {
+        "action": "reassign_to_team:Deposits & Accounts",
+        "status": "simulated_success",
+        "description": "Reassigned case to Deposits & Accounts"
+      }
+    ],
+    "status": "Escalated to Bank",
+    "verification": {
+      "passed": true,
+      "failed": [],
+      "checks": [
+        {
+          "check": "route_valid",
+          "ok": true,
+          "detail": "bank_escalation"
+        },
+        {
+          "check": "probabilities_in_range",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "deadline_consistent",
+          "ok": true,
+          "detail": "2026-05-16 04:08:00"
+        },
+        {
+          "check": "team_assigned",
+          "ok": true,
+          "detail": "Deposits & Accounts"
+        },
+        {
+          "check": "intervention_not_harmful",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "escalation_level_valid",
+          "ok": true,
+          "detail": "Branch"
+        },
+        {
+          "check": "critical_risk_escalated",
+          "ok": true,
+          "detail": "Critical + high breach risk needs Regional/MD escalation"
+        },
+        {
+          "check": "status_matches_route",
+          "ok": true,
+          "detail": "Escalated to Bank"
+        },
+        {
+          "check": "all_actions_executed",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "no_auto_action_on_low_confidence",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_trail_persisted",
+          "ok": true,
+          "detail": ""
+        }
+      ]
+    },
+    "replans": 0,
+    "degraded": false,
+    "errors": [],
+    "trace": [
+      {
+        "agent": "intake",
+        "ms": 7.24,
+        "output": {
+          "product": "Loans",
+          "issue": "Recovery Agent Harassment",
+          "confidence": 0.9744,
+          "route": "bank_escalation",
+          "severity": "Critical (10.0)",
+          "sentiment": 0.0,
+          "amount": 0.0,
+          "repeat_count": 2,
+          "needs_human_review": false
+        }
+      },
+      {
+        "agent": "risk_predictor",
+        "ms": 193.71,
+        "output": {
+          "team_load": 0.711,
+          "breach_prob": 0.8101,
+          "escalation_prob": 0.1736,
+          "median_hours": 58.8995,
+          "p90_hours": 108.653,
+          "source": "ml_models"
+        }
+      },
+      {
+        "agent": "sla_planner",
+        "ms": 0.06,
+        "output": {
+          "deadline": "2026-05-16T04:08:00",
+          "sla_hours": 24,
+          "risk_bucket": "Severe",
+          "sla_status": "At Risk",
+          "slack_hours_vs_p90": -84.7
+        }
+      },
+      {
+        "agent": "decision",
+        "ms": 178.36,
+        "output": {
+          "chosen": "fast_track+reroute",
+          "rationale": "fast_track+reroute: P(breach) 81% -> 33%, expected loss 8.10 -> 4.25 (cost 0.93, penalty 10.0)",
+          "priority_score": 42.1,
+          "escalation_level": "Branch",
+          "extra_actions": [
+            "set_priority_queue_fast_track",
+            "reassign_to_team:Deposits & Accounts"
+          ],
+          "candidates": [
+            {
+              "name": "standard",
+              "breach_prob": 0.8101,
+              "cost": 0.0,
+              "loss": 8.101
+            },
+            {
+              "name": "fast_track",
+              "breach_prob": 0.4252,
+              "cost": 0.5688,
+              "loss": 4.8211
+            },
+            {
+              "name": "reroute",
+              "breach_prob": 0.6377,
+              "cost": 0.5,
+              "loss": 6.8772
+            },
+            {
+              "name": "fast_track+reroute",
+              "breach_prob": 0.3322,
+              "cost": 0.9279,
+              "loss": 4.2499
+            }
+          ]
+        }
+      },
+      {
+        "agent": "resource_router",
+        "ms": 0.12,
+        "output": {
+          "assigned_team": "Deposits & Accounts",
+          "partner": null,
+          "expected_completion": "2026-05-16T07:30:15.600000",
+          "load_at_assignment": 0.535
+        }
+      },
+      {
+        "agent": "action",
+        "ms": 0.35,
+        "output": {
+          "executed": 4,
+          "status": "Escalated to Bank"
+        }
+      },
+      {
+        "agent": "verification",
+        "ms": 0.06,
+        "output": {
+          "passed": true,
+          "failed": [],
+          "n_checks": 11
+        }
+      }
+    ],
+    "monitor_events": [],
+    "live_breach_prob": null
+  },
+  {
+    "complaint_id": "C007938",
+    "customer_id": "CU01640",
+    "text": "Issue with branch. This happened on 11 May. The amount involved is Rs. 17,920. I have already contacted customer care 2 times. Reference 254583. Staff misbehavior. I feel cheated and harassed. I would appreciate a quick resolution. I will file a complaint with RBI.",
+    "channel": "Voice",
+    "tier": "Premium",
+    "submitted_at": "2026-05-13T11:21:00",
+    "product": "Branch Services",
+    "issue": "Staff Misbehavior",
+    "intake_confidence": 0.9055,
+    "top_issues": [
+      [
+        "Staff Misbehavior",
+        0.974
+      ],
+      [
+        "Long Queue at Branch",
+        0.013
+      ],
+      [
+        "Service Request Pending",
+        0.007
+      ]
+    ],
+    "route": "bank_escalation",
+    "base_actions": [
+      "create_branch_case",
+      "assign_branch_manager"
+    ],
+    "partner": "",
+    "severity_score": 9.0,
+    "severity_label": "Critical",
+    "sentiment": -0.25,
+    "threat_count": 1,
+    "amount": 17920.0,
+    "repeat_count": 1,
+    "needs_human_review": false,
+    "team": "Branch & Service Ops",
+    "backup_team": "Deposits & Accounts",
+    "team_load": 0.4055,
+    "baseline_risk": {
+      "p_gb": 0.5407,
+      "p_lr": 0.5154,
+      "p_dist": 0.4477,
+      "breach_prob": 0.5013,
+      "escalation_prob": 0.2453,
+      "median_hours": 22.5397,
+      "p90_hours": 41.5795,
+      "log_mu": 3.1153,
+      "source": "ml_models"
+    },
+    "sla_hours": 24,
+    "deadline": "2026-05-14T11:21:00",
+    "sla_status": "At Risk",
+    "risk_bucket": "High",
+    "checkpoints": [
+      "2026-05-13T23:21:00",
+      "2026-05-14T06:33:00"
+    ],
+    "expected_completion": "2026-05-14T01:39:51.120000",
+    "candidates": [
+      {
+        "name": "standard",
+        "fast": 0,
+        "reroute": 0,
+        "team": "Branch & Service Ops",
+        "load": 0.4055,
+        "cost": 0.0,
+        "breach_prob": 0.5013,
+        "esc_prob": 0.2453,
+        "median_hours": 22.5397,
+        "p90_hours": 41.5795,
+        "log_mu": 3.1153,
+        "loss": 6.5165
+      },
+      {
+        "name": "fast_track",
+        "fast": 1,
+        "reroute": 0,
+        "team": "Branch & Service Ops",
+        "load": 0.4055,
+        "cost": 0.4,
+        "breach_prob": 0.1959,
+        "esc_prob": 0.2403,
+        "median_hours": 15.6831,
+        "p90_hours": 28.9309,
+        "log_mu": 2.7526,
+        "loss": 2.9463
+      },
+      {
+        "name": "reroute",
+        "fast": 0,
+        "reroute": 1,
+        "team": "Deposits & Accounts",
+        "load": 0.283,
+        "cost": 0.5,
+        "breach_prob": 0.3868,
+        "esc_prob": 0.2364,
+        "median_hours": 20.8307,
+        "p90_hours": 38.4268,
+        "log_mu": 3.0364,
+        "loss": 5.529
+      },
+      {
+        "name": "fast_track+reroute",
+        "fast": 1,
+        "reroute": 1,
+        "team": "Deposits & Accounts",
+        "load": 0.283,
+        "cost": 0.9,
+        "breach_prob": 0.1374,
+        "esc_prob": 0.216,
+        "median_hours": 14.3142,
+        "p90_hours": 26.4057,
+        "log_mu": 2.6613,
+        "loss": 2.6866
+      }
+    ],
+    "intervention": {
+      "name": "fast_track+reroute",
+      "fast_track": true,
+      "reroute_to": "Deposits & Accounts",
+      "cost": 0.9,
+      "breach_prob_before": 0.5013,
+      "breach_prob_after": 0.1374,
+      "loss_before": 6.516,
+      "loss_after": 2.687,
+      "rationale": "fast_track+reroute: P(breach) 50% -> 14%, expected loss 6.52 -> 2.69 (cost 0.90, penalty 13.0)"
+    },
+    "final_risk": {
+      "breach_prob": 0.1374,
+      "median_hours": 14.3142,
+      "p90_hours": 26.4057,
+      "log_mu": 2.6613,
+      "escalation_prob": 0.216
+    },
+    "priority_score": 42.4,
+    "escalation_level": "Branch",
+    "extra_actions": [
+      "set_priority_queue_fast_track",
+      "reassign_to_team:Deposits & Accounts"
+    ],
+    "assigned_team": "Deposits & Accounts",
+    "executed_actions": [
+      {
+        "action": "create_branch_case",
+        "status": "simulated_success",
+        "description": "Executed 'create_branch_case' (simulated back-office call)"
+      },
+      {
+        "action": "assign_branch_manager",
+        "status": "simulated_success",
+        "description": "Executed 'assign_branch_manager' (simulated back-office call)"
+      },
+      {
+        "action": "set_priority_queue_fast_track",
+        "status": "simulated_success",
+        "description": "Moved case to the fast-track queue"
+      },
+      {
+        "action": "reassign_to_team:Deposits & Accounts",
+        "status": "simulated_success",
+        "description": "Reassigned case to Deposits & Accounts"
+      }
+    ],
+    "status": "Escalated to Bank",
+    "verification": {
+      "passed": true,
+      "failed": [],
+      "checks": [
+        {
+          "check": "route_valid",
+          "ok": true,
+          "detail": "bank_escalation"
+        },
+        {
+          "check": "probabilities_in_range",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "deadline_consistent",
+          "ok": true,
+          "detail": "2026-05-14 11:21:00"
+        },
+        {
+          "check": "team_assigned",
+          "ok": true,
+          "detail": "Deposits & Accounts"
+        },
+        {
+          "check": "intervention_not_harmful",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "escalation_level_valid",
+          "ok": true,
+          "detail": "Branch"
+        },
+        {
+          "check": "critical_risk_escalated",
+          "ok": true,
+          "detail": "Critical + high breach risk needs Regional/MD escalation"
+        },
+        {
+          "check": "status_matches_route",
+          "ok": true,
+          "detail": "Escalated to Bank"
+        },
+        {
+          "check": "all_actions_executed",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "no_auto_action_on_low_confidence",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_trail_persisted",
+          "ok": true,
+          "detail": ""
+        }
+      ]
+    },
+    "replans": 0,
+    "degraded": false,
+    "errors": [],
+    "trace": [
+      {
+        "agent": "intake",
+        "ms": 5.57,
+        "output": {
+          "product": "Branch Services",
+          "issue": "Staff Misbehavior",
+          "confidence": 0.9055,
+          "route": "bank_escalation",
+          "severity": "Critical (9.0)",
+          "sentiment": -0.25,
+          "amount": 17920.0,
+          "repeat_count": 1,
+          "needs_human_review": false
+        }
+      },
+      {
+        "agent": "risk_predictor",
+        "ms": 237.11,
+        "output": {
+          "team_load": 0.4055,
+          "breach_prob": 0.5013,
+          "escalation_prob": 0.2453,
+          "median_hours": 22.5397,
+          "p90_hours": 41.5795,
+          "source": "ml_models"
+        }
+      },
+      {
+        "agent": "sla_planner",
+        "ms": 0.06,
+        "output": {
+          "deadline": "2026-05-14T11:21:00",
+          "sla_hours": 24,
+          "risk_bucket": "High",
+          "sla_status": "At Risk",
+          "slack_hours_vs_p90": -17.6
+        }
+      },
+      {
+        "agent": "decision",
+        "ms": 172.52,
+        "output": {
+          "chosen": "fast_track+reroute",
+          "rationale": "fast_track+reroute: P(breach) 50% -> 14%, expected loss 6.52 -> 2.69 (cost 0.90, penalty 13.0)",
+          "priority_score": 42.4,
+          "escalation_level": "Branch",
+          "extra_actions": [
+            "set_priority_queue_fast_track",
+            "reassign_to_team:Deposits & Accounts"
+          ],
+          "candidates": [
+            {
+              "name": "standard",
+              "breach_prob": 0.5013,
+              "cost": 0.0,
+              "loss": 6.5165
+            },
+            {
+              "name": "fast_track",
+              "breach_prob": 0.1959,
+              "cost": 0.4,
+              "loss": 2.9463
+            },
+            {
+              "name": "reroute",
+              "breach_prob": 0.3868,
+              "cost": 0.5,
+              "loss": 5.529
+            },
+            {
+              "name": "fast_track+reroute",
+              "breach_prob": 0.1374,
+              "cost": 0.9,
+              "loss": 2.6866
+            }
+          ]
+        }
+      },
+      {
+        "agent": "resource_router",
+        "ms": 0.1,
+        "output": {
+          "assigned_team": "Deposits & Accounts",
+          "partner": null,
+          "expected_completion": "2026-05-14T01:39:51.120000",
+          "load_at_assignment": 0.283
+        }
+      },
+      {
+        "agent": "action",
+        "ms": 0.37,
+        "output": {
+          "executed": 4,
+          "status": "Escalated to Bank"
+        }
+      },
+      {
+        "agent": "verification",
+        "ms": 0.08,
+        "output": {
+          "passed": true,
+          "failed": [],
+          "n_checks": 11
+        }
+      }
+    ],
+    "monitor_events": [],
+    "live_breach_prob": null
+  },
+  {
+    "complaint_id": "C007671",
+    "customer_id": "CU02466",
+    "text": "Writing to complain about government scheme: Not credited. This happened on 05 May. Reference 582888. Please help me resolve this. I am extremely frustrated with this service. Very disappointed and angry. Worst experience with any bank. I am consulting my lawyer.",
+    "channel": "Email",
+    "tier": "Premium",
+    "submitted_at": "2026-05-08T15:47:00",
+    "product": "Pension / Government Schemes",
+    "issue": "Pension Not Credited",
+    "intake_confidence": 0.1621,
+    "top_issues": [
+      [
+        "Pension Not Credited",
+        0.566
+      ],
+      [
+        "APY Registration Failed",
+        0.32
+      ],
+      [
+        "NPS Registration Failed",
+        0.077
+      ]
+    ],
+    "route": "partner_escalation",
+    "base_actions": [
+      "create_partner_case",
+      "forward_to_government_department"
+    ],
+    "partner": "Government Department",
+    "severity_score": 9.0,
+    "severity_label": "Critical",
+    "sentiment": -0.2857,
+    "threat_count": 1,
+    "amount": 0.0,
+    "repeat_count": 0,
+    "needs_human_review": true,
+    "team": "Partner Desk",
+    "backup_team": "",
+    "team_load": 0.6229,
+    "baseline_risk": {
+      "p_gb": 0.5052,
+      "p_lr": 0.796,
+      "p_dist": 0.9423,
+      "breach_prob": 0.7478,
+      "escalation_prob": 0.1741,
+      "median_hours": 50.9218,
+      "p90_hours": 93.9365,
+      "log_mu": 3.9303,
+      "source": "ml_models"
+    },
+    "sla_hours": 24,
+    "deadline": "2026-05-09T15:47:00",
+    "sla_status": "At Risk",
+    "risk_bucket": "High",
+    "checkpoints": [
+      "2026-05-09T03:47:00",
+      "2026-05-09T10:59:00"
+    ],
+    "expected_completion": "2026-05-09T18:06:49.800000",
+    "candidates": [
+      {
+        "name": "standard",
+        "fast": 0,
+        "reroute": 0,
+        "team": "Partner Desk",
+        "load": 0.6229,
+        "cost": 0.0,
+        "breach_prob": 0.7478,
+        "esc_prob": 0.1741,
+        "median_hours": 50.9218,
+        "p90_hours": 93.9365,
+        "log_mu": 3.9303,
+        "loss": 9.7219
+      },
+      {
+        "name": "fast_track",
+        "fast": 1,
+        "reroute": 0,
+        "team": "Partner Desk",
+        "load": 0.6229,
+        "cost": 0.4983,
+        "breach_prob": 0.3924,
+        "esc_prob": 0.1668,
+        "median_hours": 26.3305,
+        "p90_hours": 48.5725,
+        "log_mu": 3.2707,
+        "loss": 5.5996
+      }
+    ],
+    "intervention": {
+      "name": "fast_track",
+      "fast_track": true,
+      "reroute_to": null,
+      "cost": 0.498,
+      "breach_prob_before": 0.7478,
+      "breach_prob_after": 0.3924,
+      "loss_before": 9.722,
+      "loss_after": 5.6,
+      "rationale": "fast_track: P(breach) 75% -> 39%, expected loss 9.72 -> 5.60 (cost 0.50, penalty 13.0)"
+    },
+    "final_risk": {
+      "breach_prob": 0.3924,
+      "median_hours": 26.3305,
+      "p90_hours": 48.5725,
+      "log_mu": 3.2707,
+      "escalation_prob": 0.1668
+    },
+    "priority_score": 47.7,
+    "escalation_level": "Regional Office",
+    "extra_actions": [
+      "set_priority_queue_fast_track"
+    ],
+    "assigned_team": "Partner Desk",
+    "executed_actions": [
+      {
+        "action": "route_to_human_triage",
+        "status": "simulated_success",
+        "description": "Queued for human triage (low-confidence classification, no automated action)"
+      }
+    ],
+    "status": "Pending Human Review",
+    "verification": {
+      "passed": true,
+      "failed": [],
+      "checks": [
+        {
+          "check": "route_valid",
+          "ok": true,
+          "detail": "partner_escalation"
+        },
+        {
+          "check": "probabilities_in_range",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "deadline_consistent",
+          "ok": true,
+          "detail": "2026-05-09 15:47:00"
+        },
+        {
+          "check": "team_assigned",
+          "ok": true,
+          "detail": "Partner Desk"
+        },
+        {
+          "check": "intervention_not_harmful",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "escalation_level_valid",
+          "ok": true,
+          "detail": "Regional Office"
+        },
+        {
+          "check": "critical_risk_escalated",
+          "ok": true,
+          "detail": "Critical + high breach risk needs Regional/MD escalation"
+        },
+        {
+          "check": "status_matches_route",
+          "ok": true,
+          "detail": "Pending Human Review"
+        },
+        {
+          "check": "all_actions_executed",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "no_auto_action_on_low_confidence",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_trail_persisted",
+          "ok": true,
+          "detail": ""
+        }
+      ]
+    },
+    "replans": 0,
+    "degraded": false,
+    "errors": [],
+    "trace": [
+      {
+        "agent": "intake",
+        "ms": 5.36,
+        "output": {
+          "product": "Pension / Government Schemes",
+          "issue": "Pension Not Credited",
+          "confidence": 0.1621,
+          "route": "partner_escalation",
+          "severity": "Critical (9.0)",
+          "sentiment": -0.2857,
+          "amount": 0.0,
+          "repeat_count": 0,
+          "needs_human_review": true
+        }
+      },
+      {
+        "agent": "risk_predictor",
+        "ms": 185.04,
+        "output": {
+          "team_load": 0.6229,
+          "breach_prob": 0.7478,
+          "escalation_prob": 0.1741,
+          "median_hours": 50.9218,
+          "p90_hours": 93.9365,
+          "source": "ml_models"
+        }
+      },
+      {
+        "agent": "sla_planner",
+        "ms": 0.04,
+        "output": {
+          "deadline": "2026-05-09T15:47:00",
+          "sla_hours": 24,
+          "risk_bucket": "High",
+          "sla_status": "At Risk",
+          "slack_hours_vs_p90": -69.9
+        }
+      },
+      {
+        "agent": "decision",
+        "ms": 124.91,
+        "output": {
+          "chosen": "fast_track",
+          "rationale": "fast_track: P(breach) 75% -> 39%, expected loss 9.72 -> 5.60 (cost 0.50, penalty 13.0)",
+          "priority_score": 47.7,
+          "escalation_level": "Regional Office",
+          "extra_actions": [
+            "set_priority_queue_fast_track"
+          ],
+          "candidates": [
+            {
+              "name": "standard",
+              "breach_prob": 0.7478,
+              "cost": 0.0,
+              "loss": 9.7219
+            },
+            {
+              "name": "fast_track",
+              "breach_prob": 0.3924,
+              "cost": 0.4983,
+              "loss": 5.5996
+            }
+          ]
+        }
+      },
+      {
+        "agent": "resource_router",
+        "ms": 0.07,
+        "output": {
+          "assigned_team": "Partner Desk",
+          "partner": "Government Department",
+          "expected_completion": "2026-05-09T18:06:49.800000",
+          "load_at_assignment": 0.623
+        }
+      },
+      {
+        "agent": "action",
+        "ms": 0.12,
+        "output": {
+          "executed": 1,
+          "status": "Pending Human Review"
+        }
+      },
+      {
+        "agent": "verification",
+        "ms": 0.04,
+        "output": {
+          "passed": true,
+          "failed": [],
+          "n_checks": 11
+        }
+      }
+    ],
+    "monitor_events": [],
+    "live_breach_prob": null
+  },
+  {
+    "complaint_id": "C007658",
+    "customer_id": "CU01397",
+    "text": "I am facing a problem with my service request. Virtual request. This happened on 05 May. I have already contacted customer care 3 times. Reference 114666. Please help me resolve this.",
+    "channel": "Email",
+    "tier": "Premium",
+    "submitted_at": "2026-05-08T11:24:00",
+    "product": "General Service Requests",
+    "issue": "Virtual Card Request",
+    "intake_confidence": 0.9032,
+    "top_issues": [
+      [
+        "Virtual Card Request",
+        0.904
+      ],
+      [
+        "Cheque Book Request",
+        0.013
+      ],
+      [
+        "FD Renewal Request",
+        0.012
+      ]
+    ],
+    "route": "auto_resolve",
+    "base_actions": [
+      "generate_virtual_card",
+      "activate_virtual_card",
+      "notify_card_ready"
+    ],
+    "partner": "",
+    "severity_score": 3.0,
+    "severity_label": "Low",
+    "sentiment": 0.6667,
+    "threat_count": 0,
+    "amount": 0.0,
+    "repeat_count": 1,
+    "needs_human_review": false,
+    "team": "Automation Engine",
+    "backup_team": "",
+    "team_load": 0.15,
+    "baseline_risk": {
+      "p_gb": 0.0,
+      "p_lr": 0.0001,
+      "p_dist": 0.0,
+      "breach_prob": 0.0,
+      "escalation_prob": 0.0576,
+      "median_hours": 4.6066,
+      "p90_hours": 8.4979,
+      "log_mu": 1.5275,
+      "source": "ml_models"
+    },
+    "sla_hours": 360,
+    "deadline": "2026-05-23T11:24:00",
+    "sla_status": "On Track",
+    "risk_bucket": "Low",
+    "checkpoints": [
+      "2026-05-15T23:24:00",
+      "2026-05-20T11:24:00"
+    ],
+    "expected_completion": "2026-05-08T16:00:23.760000",
+    "candidates": [
+      {
+        "name": "standard",
+        "fast": 0,
+        "reroute": 0,
+        "team": "Automation Engine",
+        "load": 0.15,
+        "cost": 0.0,
+        "breach_prob": 0.0,
+        "esc_prob": 0.0576,
+        "median_hours": 4.6066,
+        "p90_hours": 8.4979,
+        "log_mu": 1.5275,
+        "loss": 0.0001
+      }
+    ],
+    "intervention": {
+      "name": "standard",
+      "fast_track": false,
+      "reroute_to": null,
+      "cost": 0.0,
+      "breach_prob_before": 0.0,
+      "breach_prob_after": 0.0,
+      "loss_before": 0.0,
+      "loss_after": 0.0,
+      "rationale": "standard: no feasible intervention lowers expected loss (0.00)"
+    },
+    "final_risk": {
+      "breach_prob": 0.0,
+      "median_hours": 4.6066,
+      "p90_hours": 8.4979,
+      "log_mu": 1.5275,
+      "escalation_prob": 0.0576
+    },
+    "priority_score": 14.9,
+    "escalation_level": "None",
+    "extra_actions": [],
+    "assigned_team": "Automation Engine",
+    "executed_actions": [
+      {
+        "action": "generate_virtual_card",
+        "status": "simulated_success",
+        "description": "Executed 'generate_virtual_card' (simulated back-office call)"
+      },
+      {
+        "action": "activate_virtual_card",
+        "status": "simulated_success",
+        "description": "Executed 'activate_virtual_card' (simulated back-office call)"
+      },
+      {
+        "action": "notify_card_ready",
+        "status": "simulated_success",
+        "description": "Executed 'notify_card_ready' (simulated back-office call)"
+      }
+    ],
+    "status": "Resolved",
+    "verification": {
+      "passed": true,
+      "failed": [],
+      "checks": [
+        {
+          "check": "route_valid",
+          "ok": true,
+          "detail": "auto_resolve"
+        },
+        {
+          "check": "probabilities_in_range",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "deadline_consistent",
+          "ok": true,
+          "detail": "2026-05-23 11:24:00"
+        },
+        {
+          "check": "team_assigned",
+          "ok": true,
+          "detail": "Automation Engine"
+        },
+        {
+          "check": "intervention_not_harmful",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "escalation_level_valid",
+          "ok": true,
+          "detail": "None"
+        },
+        {
+          "check": "critical_risk_escalated",
+          "ok": true,
+          "detail": "Critical + high breach risk needs Regional/MD escalation"
+        },
+        {
+          "check": "status_matches_route",
+          "ok": true,
+          "detail": "Resolved"
+        },
+        {
+          "check": "all_actions_executed",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "no_auto_action_on_low_confidence",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_trail_persisted",
+          "ok": true,
+          "detail": ""
+        }
+      ]
+    },
+    "replans": 0,
+    "degraded": false,
+    "errors": [],
+    "trace": [
+      {
+        "agent": "intake",
+        "ms": 4.5,
+        "output": {
+          "product": "General Service Requests",
+          "issue": "Virtual Card Request",
+          "confidence": 0.9032,
+          "route": "auto_resolve",
+          "severity": "Low (3.0)",
+          "sentiment": 0.6667,
+          "amount": 0.0,
+          "repeat_count": 1,
+          "needs_human_review": false
+        }
+      },
+      {
+        "agent": "risk_predictor",
+        "ms": 117.04,
+        "output": {
+          "team_load": 0.15,
+          "breach_prob": 0.0,
+          "escalation_prob": 0.0576,
+          "median_hours": 4.6066,
+          "p90_hours": 8.4979,
+          "source": "ml_models"
+        }
+      },
+      {
+        "agent": "sla_planner",
+        "ms": 0.04,
+        "output": {
+          "deadline": "2026-05-23T11:24:00",
+          "sla_hours": 360,
+          "risk_bucket": "Low",
+          "sla_status": "On Track",
+          "slack_hours_vs_p90": 351.5
+        }
+      },
+      {
+        "agent": "decision",
+        "ms": 111.6,
+        "output": {
+          "chosen": "standard",
+          "rationale": "standard: no feasible intervention lowers expected loss (0.00)",
+          "priority_score": 14.9,
+          "escalation_level": "None",
+          "extra_actions": [],
+          "candidates": [
+            {
+              "name": "standard",
+              "breach_prob": 0.0,
+              "cost": 0.0,
+              "loss": 0.0001
+            }
+          ]
+        }
+      },
+      {
+        "agent": "resource_router",
+        "ms": 0.06,
+        "output": {
+          "assigned_team": "Automation Engine",
+          "partner": null,
+          "expected_completion": "2026-05-08T16:00:23.760000",
+          "load_at_assignment": 0.15
+        }
+      },
+      {
+        "agent": "action",
+        "ms": 0.13,
+        "output": {
+          "executed": 3,
+          "status": "Resolved"
+        }
+      },
+      {
+        "agent": "verification",
+        "ms": 0.03,
+        "output": {
+          "passed": true,
+          "failed": [],
+          "n_checks": 11
+        }
+      }
+    ],
+    "monitor_events": [],
+    "live_breach_prob": null
+  }
+]
